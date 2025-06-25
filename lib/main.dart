@@ -1,10 +1,12 @@
 import 'package:api_app/models/user_model.dart';
 import 'package:api_app/providers/comment_controller.dart';
+import 'package:api_app/providers/photos_controller.dart';
 import 'package:api_app/providers/post_controller.dart';
 import 'package:api_app/providers/todo_contoller.dart';
 import 'package:api_app/providers/user_controller.dart';
 
 import 'package:api_app/screens/comment_screen.dart';
+import 'package:api_app/screens/photos_screen.dart';
 import 'package:api_app/screens/post_screens.dart';
 import 'package:api_app/screens/todo_screen.dart';
 
@@ -28,6 +30,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => CommentController()),
         ChangeNotifierProvider(create: (context) => TodoController()),
         ChangeNotifierProvider(create: (context)=> UserController()),
+        ChangeNotifierProvider(create: (context)=> PhotosController()),
       ],
       child: MaterialApp(
         title: "Flutter demo",
@@ -35,7 +38,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
           useMaterial3: true,
         ),
-      home: PostScreens(),
+      home: PhotosScreen(),
       ),
     );
   }
